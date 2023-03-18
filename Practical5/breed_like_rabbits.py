@@ -1,9 +1,13 @@
 # inbreeding coefficient
-n = 2 # origin number of rabbit
-z = 1 # how many generations
+#first generation has two rabbits
+#one more generation, number of rabbits plus 2
+#repeat until total number more than 100
+
+n = 2 #origin number of rabbits
+z = 1 #how many generations
 while n <= 100:
-    m = n * 2  # inbreeding coefficient
-    n = m
+    m = n * 2  #inbreeding coefficient
+    n = m #total number of rabits
     z = z+1
     print (m)
 if n > 100:
