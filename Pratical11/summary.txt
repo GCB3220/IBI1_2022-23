@@ -1,0 +1,19 @@
+mouse and cat:
+      alignment score: 3592
+      percent: 81.73%
+
+
+mouse and human:
+      alignment score: 3579
+      percent: 82.11%
+
+
+human and cat:
+      alignment score: 3717
+      percent: 85.12%
+
+
+
+
+Proteins from human and cat are more similar. This may indicate a closer kinship between humans and cats
+       
