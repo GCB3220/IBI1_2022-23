@@ -12,5 +12,3 @@ while n <= 100:
     print (m)
 if n > 100:
     print("it continues",z, "genenrations to over 100")
-
-input()
