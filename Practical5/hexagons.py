@@ -13,8 +13,7 @@ print ("over")
 
 
 # used to calculate h
-while 1 == 1: # continue use
-    n = eval(input("n = "))
-    h = 2*n*(2*n-1)/2 # calculate h
-    print(h) # answer
-input ()
+n = eval(input("n = "))
+h = 2*n*(2*n-1)/2 # calculate h
+print(h) # answer
+
