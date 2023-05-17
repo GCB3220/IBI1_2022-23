@@ -7,22 +7,18 @@ sheet = workbook.add_sheet('autophagosome')
 dom = minidom.parse('go_obo.xml')
 terms = dom.getElementsByTagName('term')
 
-
-def get_child_count(term):
+def get_chlid_id(id):
     count = 0
-    id = term.getElementsByTagName('id')[0].firstChild.data
-    child_id = []
-    child_id.append(id)
-    for term1 in terms:
-        if term1.getElementsByTagName('is_a'):
-            is_a = term1.getElementsByTagName('is_a')[0].firstChild.data
-            if is_a in child_id:
-                count += 1
-                child_id.append(term1.getElementsByTagName('id')[0].firstChild.data)
-
+    for term in terms:
+        id1 = term.getElementsByTagName('id')[0]
+        is_a = term.getElementsByTagName('is_a')
+        for is_a1 in is_a:
+            id_value = is_a1.firstChild.data
+            if id == id_value:
+                count += get_chlid_id(id1.firstChild.data) + 1
+            else:
+                continue
     return count
-
-
 
 row = 1
 sheet.write(0, 0, 'id')
@@ -35,7 +31,7 @@ for term in terms:
         term_id = term.getElementsByTagName('id')[0].firstChild.data
         term_name = term.getElementsByTagName('name')[0].firstChild.data
         if term.getElementsByTagName('is_a')[0].firstChild.data:
-            child_count = get_child_count(term)
+            child_count = get_chlid_id(term_id)
 
         sheet.write(row, 0, term_id)
         sheet.write(row, 1, term_name)
